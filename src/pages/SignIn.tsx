@@ -4,7 +4,7 @@ import {FormField} from "../components/Base/FormField";
 import {InputEmail} from "../components/Base/InputEmail";
 import {InputPassword} from "../components/Base/InputPassword";
 import {IBMPlexMono_400Regular, IBMPlexMono_700Bold, useFonts} from "@expo-google-fonts/ibm-plex-mono";
-import {SocialButton, SocialButtons} from "../components/SocialButton";
+import {SocialButton, SocialButtonsType} from "../components/SocialButton";
 
 export const SignIn = () => {
   useFonts({
@@ -53,9 +53,9 @@ export const SignIn = () => {
       </Text>
       <Text style={[styles.text, { textAlign: 'center', marginBottom: 16 }]}>Sign in with</Text>
       <View style={styles.socialButtons}>
-        <SocialButton type={SocialButtons.Google} />
-        <SocialButton type={SocialButtons.Linkedin} />
-        <SocialButton type={SocialButtons.Github} />
+        <SocialButton type={SocialButtonsType.Google} />
+        <SocialButton type={SocialButtonsType.Linkedin} />
+        <SocialButton type={SocialButtonsType.Github} />
       </View>
     </View>
   )
