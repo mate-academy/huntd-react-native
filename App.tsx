@@ -1,15 +1,13 @@
 import React from 'react';
-import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Constants from 'expo-constants';
-
-import {SignIn} from "./src/pages/SignIn";
+import { SignIn } from './src/pages/SignIn';
+import { theme } from './src/controllers/theme/theme.constants';
 
 export default function App() {
   return (
     <View style={styles.main}>
       <SignIn />
-      <StatusBar style="auto" />
     </View>
   );
 }
@@ -18,6 +16,6 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#FDFBFB',
+    backgroundColor: theme.color.background,
   },
 });

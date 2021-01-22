@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, TextInput} from 'react-native';
+import { View, StyleSheet, TextInput } from 'react-native';
+import { theme } from '../../controllers/theme/theme.constants';
 
 interface Props {
   value: string;
@@ -8,7 +9,7 @@ interface Props {
 }
 
 export const InputEmail = (props: Props) => {
-  const {placeholder, value, setValue} = props;
+  const { placeholder, value, setValue } = props;
 
   return (
     <View>
@@ -22,16 +23,16 @@ export const InputEmail = (props: Props) => {
       />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   emailInput: {
     paddingHorizontal: 16,
     paddingVertical: 12,
-    backgroundColor: '#fff',
+    backgroundColor: theme.color.white,
     borderRadius: 4,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: '#D1CCC9',
+    borderColor: theme.color.lightGray,
   }
-})
+});

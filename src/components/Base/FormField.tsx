@@ -1,13 +1,14 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
+import { theme } from '../../controllers/theme/theme.constants';
 
 interface Props {
   label?: string;
-  renderInput: () => JSX.Element;
+  renderInput: () => any;
 }
 
 export const FormField = (props: Props) => {
-  const {label, renderInput} = props;
+  const { label, renderInput } = props;
 
   return (
     <View style={styles.container}>
@@ -19,7 +20,7 @@ export const FormField = (props: Props) => {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -28,8 +29,8 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 14,
     lineHeight: 20,
-    fontWeight: "normal",
-    color: "#726E6C",
+    fontWeight: 'normal',
+    color: theme.color.gray,
     marginBottom: 4
   },
 });

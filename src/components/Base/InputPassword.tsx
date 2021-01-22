@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, TextInput} from 'react-native';
+import { View, StyleSheet, TextInput } from 'react-native';
+import { theme } from '../../controllers/theme/theme.constants';
 
 interface Props {
   value: string;
@@ -8,12 +9,12 @@ interface Props {
 }
 
 export const InputPassword = (props: Props) => {
-  const {placeholder, value, setValue} = props;
+  const { placeholder, value, setValue } = props;
 
   return (
     <View>
       <TextInput
-        secureTextEntry={true}
+        secureTextEntry
         autoCapitalize="none"
         value={value}
         onChangeText={setValue}
@@ -23,16 +24,16 @@ export const InputPassword = (props: Props) => {
       />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   passwordInput: {
     paddingHorizontal: 16,
     paddingVertical: 12,
-    backgroundColor: '#fff',
+    backgroundColor: theme.color.white,
     borderRadius: 4,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: '#D1CCC9'
+    borderColor: theme.color.lightGray,
   }
-})
+});

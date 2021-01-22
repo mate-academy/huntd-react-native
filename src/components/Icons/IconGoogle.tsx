@@ -1,7 +1,6 @@
 import React from 'react';
-import {Path, Rect, Svg} from "react-native-svg";
-import {View, StyleSheet} from "react-native";
-
+import { Path, Rect, Svg } from 'react-native-svg';
+import { View, StyleSheet } from 'react-native';
 
 export const IconGoogle = () => (
   <View>
@@ -24,7 +23,7 @@ export const IconGoogle = () => (
       />
     </Svg>
   </View>
-)
+);
 
 const styles = StyleSheet.create({
   svg: {

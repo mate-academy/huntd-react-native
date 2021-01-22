@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {FormField} from "../components/Base/FormField";
-import {InputEmail} from "../components/Base/InputEmail";
-import {InputPassword} from "../components/Base/InputPassword";
-import {IBMPlexMono_400Regular, IBMPlexMono_700Bold, useFonts} from "@expo-google-fonts/ibm-plex-mono";
-import {SocialButton, SocialButtonsType} from "../components/SocialButton";
+import React, { useState } from 'react';
+import {
+  Alert,
+  StyleSheet, Text, TouchableOpacity, View,
+} from 'react-native';
+import { IBMPlexMono_400Regular, IBMPlexMono_700Bold, useFonts } from '@expo-google-fonts/ibm-plex-mono';
+import { FormField } from '../components/Base/FormField';
+import { InputEmail } from '../components/Base/InputEmail';
+import { InputPassword } from '../components/Base/InputPassword';
+import { SocialButton, SocialButtonsType } from '../components/SocialButton';
+import { theme } from '../controllers/theme/theme.constants';
 
 export const SignIn = () => {
   useFonts({
@@ -16,8 +20,7 @@ export const SignIn = () => {
   const [password, setPassword] = useState('');
 
   const submitHandler = () => {
-    console.log(email, password);
-    console.log('Submit handler');
+    Alert.alert('Huntd Login', `email: ${email},\n password: ${password}`);
   };
 
   return (
@@ -48,9 +51,11 @@ export const SignIn = () => {
       <TouchableOpacity style={styles.button} onPress={submitHandler}>
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
-      <Text style={[styles.text, styles.color, { marginBottom: 48 }]}>
-        Forgot password
-      </Text>
+      <TouchableOpacity style={{ marginBottom: 48 }}>
+        <Text style={[styles.text, styles.color]}>
+          Forgot password
+        </Text>
+      </TouchableOpacity>
       <Text style={[styles.text, { textAlign: 'center', marginBottom: 16 }]}>Sign in with</Text>
       <View style={styles.socialButtons}>
         <SocialButton type={SocialButtonsType.Google} />
@@ -58,37 +63,37 @@ export const SignIn = () => {
         <SocialButton type={SocialButtonsType.Github} />
       </View>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   page: {
     paddingTop: 52,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   inputs: {
     marginBottom: 24,
   },
   header: {
     fontFamily: 'IBMPlexMono_700Bold',
-    color: '#f35a35',
+    color: theme.color.citrus,
     fontSize: 18,
     lineHeight: 26,
-    fontWeight: "bold",
-    marginBottom: 32
+    fontWeight: 'bold',
+    marginBottom: 32,
   },
   button: {
     paddingVertical: 16,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F35A35',
+    backgroundColor: theme.color.citrus,
     borderRadius: 4,
-    marginBottom: 14
+    marginBottom: 14,
   },
   buttonText: {
     fontFamily: 'IBMPlexMono_700Bold',
-    color: '#fff',
-    textTransform: "uppercase",
+    color: theme.color.white,
+    textTransform: 'uppercase',
     fontWeight: 'bold',
     fontSize: 12,
     lineHeight: 16,
@@ -97,10 +102,10 @@ const styles = StyleSheet.create({
     fontFamily: 'IBMPlexMono_400Regular',
   },
   color: {
-    color: '#F35A35',
+    color: theme.color.citrus,
   },
   socialButtons: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
-  }
-})
+    justifyContent: 'space-between',
+  },
+});
